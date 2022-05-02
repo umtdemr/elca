@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_layer">10dp</dimen>
+    <dimen name="padding_layer">10dp</dimen>
+    <dimen name="margin_global">30dp</dimen>
+    <dimen name="padding_global">30dp</dimen>
+    <dimen name="text_size_regular">12sp</dimen>
+    <dimen name="text_size_big">16sp</dimen>
+    <dimen name="text_size_grande">18sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_smallest">8sp</dimen>
+</resources>
