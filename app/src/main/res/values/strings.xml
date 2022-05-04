@@ -2,4 +2,6 @@
     <string name="app_name">elca</string>
     <string name="no_data_title">Veri bulunamadı</string>
     <string name="no_data_text">Elektronik eşya verisi bulunamadı. Lütfen menüden elektronik eşya ekleyerek başlayın.</string>
+    <string name="menu_item_list">Eşya Listesi</string>
+    <string name="menu_add_item">Eşya Ekle</string>
 </resources>
