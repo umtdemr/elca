@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_favorite"
-        android:icon="@drawable/elca_logo"
+        android:id="@+id/action_toggle_dark_theme"
+        android:icon="@drawable/ic_baseline_nights_stay_24"
         android:title="@string/no_data_text"
         app:showAsAction="ifRoom"
          />
