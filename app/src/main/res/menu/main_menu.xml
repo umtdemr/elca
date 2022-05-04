@@ -7,7 +7,10 @@
         android:title="@string/no_data_text"
         app:showAsAction="ifRoom"
          />
-    <item android:id="@+id/action_settings"
-        android:title="@string/no_data_title"
+    <item android:id="@+id/action_item_list"
+        android:title="@string/menu_item_list"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_add_item"
+        android:title="@string/menu_add_item"
         app:showAsAction="never" />
 </menu>
