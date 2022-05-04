@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
     private void changeToggleThemeIcon(MenuItem menuItem, boolean isNightModeOn) {
         if (isNightModeOn) {
             menuItem.setIcon(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_baseline_wb_sunny_24));
+            menuItem.setTitle(R.string.menu_dark_theme_inactive);
         } else {
             menuItem.setIcon(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_baseline_nights_stay_24));
+            menuItem.setTitle(R.string.menu_dark_theme_active);
         }
     }
 
