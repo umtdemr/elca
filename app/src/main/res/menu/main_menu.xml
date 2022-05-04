@@ -4,7 +4,7 @@
     <item
         android:id="@+id/action_toggle_dark_theme"
         android:icon="@drawable/ic_baseline_nights_stay_24"
-        android:title="@string/no_data_text"
+        android:title="@string/menu_dark_theme_active"
         app:showAsAction="ifRoom"
          />
     <item android:id="@+id/action_item_list"
