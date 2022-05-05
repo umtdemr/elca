@@ -41,8 +41,6 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         Item item = itemList.get(position);
         holder.lblTitle.setText(item.getTitle());
-
-        // TODO : Move to Correct property and Float to string
         holder.lblMaxWatt.setText(String.valueOf(item.getMaxWatt()) + " watt");
         holder.lblAverageUsage.setText(String.valueOf(item.getAverageUsage()) + " saat");
     }
