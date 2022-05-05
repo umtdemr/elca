@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@color/red_salsa"
         android:padding="@dimen/padding_layer"
         android:tag="reveal-left">
@@ -21,9 +21,9 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:padding="@dimen/padding_layer"
-        android:background="@color/white"
+        android:background="@color/royal_blue"
         android:tag="front">
         <TextView
             android:id="@+id/lblTitle"
@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_grande" />
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
@@ -43,10 +44,12 @@
                 android:id="@+id/lblMaxWatt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_small" />
             <TextView
                 android:id="@+id/lblAverageUsage"
                 android:layout_width="wrap_content"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </RelativeLayout>
