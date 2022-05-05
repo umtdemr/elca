@@ -23,6 +23,9 @@ import java.util.ArrayList;
 
 import adapter.ItemRecyclerViewAdapter;
 import co.dift.ui.SwipeToAction;
+import dao.IItemDAO;
+import entities.ItemEntity;
+import model.AppDatabase;
 import model.Item;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     public Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
+
+    private AppDatabase appDatabase;
+    private IItemDAO itemDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("AppSettingPrefs", 0);
 
         toggleDarkTheme();
+
+        appDatabase = AppDatabase.getAppDatabase(MainActivity.this);
+        itemDAO = appDatabase.getItemDAO();
     }
     private void registerEventHandlers() {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -62,42 +71,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-        ArrayList<Item> itemList = new ArrayList<>();
-
-        itemList.add(new Item(1, "Televizyon", 3.5, 50));
-        itemList.add(new Item(1, "Televizyon", 4, 50));
-        itemList.add(new Item(1, "Televizyon", 24, 50));
-        itemList.add(new Item(1, "Televizyon", 3, 50));
-        itemList.add(new Item(1, "Televizyon", 3, 50));
-
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
         recyclerView.setHasFixedSize(true);
 
-        ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(itemList);
+        ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(itemDAO.loadAllItems());
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
-        swipeToAction = new SwipeToAction(recyclerView, new SwipeToAction.SwipeListener<Item>() {
+        swipeToAction = new SwipeToAction(recyclerView, new SwipeToAction.SwipeListener<ItemEntity>() {
             @Override
-            public boolean swipeLeft(Item itemData) {
+            public boolean swipeLeft(ItemEntity itemData) {
                 Snackbar snackbar = Snackbar.make(recyclerView, itemData.getTitle() + " sil", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 return true;
             }
 
             @Override
-            public boolean swipeRight(Item itemData) {
+            public boolean swipeRight(ItemEntity itemData) {
                 return false;
             }
 
             @Override
-            public void onClick(Item itemData) {
+            public void onClick(ItemEntity itemData) {
 
             }
 
             @Override
-            public void onLongClick(Item itemData) {
+            public void onLongClick(ItemEntity itemData) {
 
             }
         });

@@ -12,12 +12,13 @@ import com.example.elca.R;
 import java.util.List;
 
 import co.dift.ui.SwipeToAction;
+import entities.ItemEntity;
 import model.Item;
 
 public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerViewAdapter.ItemViewHolder> {
-    private List<Item> itemList;
+    private List<ItemEntity> itemList;
 
-    class ItemViewHolder extends SwipeToAction.ViewHolder<Item> {
+    class ItemViewHolder extends SwipeToAction.ViewHolder<ItemEntity> {
         private TextView lblTitle, lblMaxWatt, lblAverageUsage;
 
         ItemViewHolder(View view) {
@@ -28,7 +29,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         }
     }
 
-    public ItemRecyclerViewAdapter(List<Item> itemList) {
+    public ItemRecyclerViewAdapter(List<ItemEntity> itemList) {
         this.itemList = itemList;
     }
 
@@ -41,7 +42,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        Item item = itemList.get(position);
+        ItemEntity item = itemList.get(position);
         holder.lblTitle.setText(item.getTitle());
         holder.lblMaxWatt.setText(String.valueOf(item.getMaxWatt()) + " watt");
         holder.lblAverageUsage.setText(String.valueOf(item.getAverageUsage()) + " saat");
