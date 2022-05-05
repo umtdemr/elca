@@ -9,12 +9,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class AddItemActivity extends AppCompatActivity {
-    private boolean isValid;  // control form valid
+    private boolean isTitleValid = false, isAverageUsageValid = false, isMaxWattValid = false;  // control form valid
     private MaterialButton btnAdd;
     private TextInputLayout txtTitleWrapper, txtMaxWattWrapper, txtAverageUsageWrapper;
 
@@ -43,6 +45,7 @@ public class AddItemActivity extends AppCompatActivity {
     private void registerEventHandlers() {
         controlTxtTitleValid();
         controlAverageUsageValid();
+        btnAddClick();
     }
 
     private void controlTxtTitleValid() {
@@ -84,7 +87,6 @@ public class AddItemActivity extends AppCompatActivity {
                 String text = String.valueOf(value);
                 if (text.length() > 0) {   // for avoiding empty text parsing
                     double averageUsage = Double.parseDouble(String.valueOf(text));
-
                     if (averageUsage > 24) {
                         txtAverageUsageWrapper.setError(getResources().getString(R.string.add_item_average_usage_max_error));
                     } else {
@@ -98,6 +100,29 @@ public class AddItemActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
+            }
+        });
+    }
+    private void btnAddClick() {
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!txtTitleWrapper.isErrorEnabled() && !txtAverageUsageWrapper.isErrorEnabled()) {
+                   if (txtTitleWrapper.getEditText().getText().length() > 0 &&
+                           txtAverageUsageWrapper.getEditText().getText().length() > 0 &&
+                           txtMaxWattWrapper.getEditText().getText().length() > 0
+                   ) {
+                       Toast.makeText(AddItemActivity.this, "gönderiliyor", Toast.LENGTH_LONG).show();
+                   } else {
+                       Toast.makeText(AddItemActivity.this,
+                               "Tüm alanların dolu ve hatasız olduğundan emin olun",
+                               Toast.LENGTH_SHORT).show();
+                   }
+                } else {
+                    Toast.makeText(AddItemActivity.this,
+                            "Tüm alanların dolu ve hatasız olduğundan emin olun",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
