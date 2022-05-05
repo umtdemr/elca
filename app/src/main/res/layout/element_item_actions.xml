@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/red_salsa"
+        android:padding="@dimen/padding_layer"
         android:tag="reveal-left">
         <ImageView
             android:layout_width="wrap_content"
@@ -18,5 +18,36 @@
             android:layout_marginRight="@dimen/margin_layer"
             android:src="@drawable/ic_delete"
             app:tint="@color/white" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_layer"
+        android:background="@color/white"
+        android:tag="front">
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_size_grande" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="right"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/lblMaxWatt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small" />
+            <TextView
+                android:id="@+id/lblAverageUsage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </RelativeLayout>
 </FrameLayout>

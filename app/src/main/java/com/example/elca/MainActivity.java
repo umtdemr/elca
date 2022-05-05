@@ -15,13 +15,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 import adapter.ItemRecyclerViewAdapter;
+import co.dift.ui.SwipeToAction;
 import model.Item;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
+    private SwipeToAction swipeToAction;
     private SharedPreferences sharedPreferences;
     public Toolbar toolbar;
 
@@ -59,6 +63,30 @@ public class MainActivity extends AppCompatActivity {
         ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(itemList);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+
+        swipeToAction = new SwipeToAction(recyclerView, new SwipeToAction.SwipeListener<Item>() {
+            @Override
+            public boolean swipeLeft(Item itemData) {
+                Snackbar snackbar = Snackbar.make(recyclerView, itemData.getTitle() + " sil", Snackbar.LENGTH_LONG);
+                snackbar.show();
+                return true;
+            }
+
+            @Override
+            public boolean swipeRight(Item itemData) {
+                return false;
+            }
+
+            @Override
+            public void onClick(Item itemData) {
+
+            }
+
+            @Override
+            public void onLongClick(Item itemData) {
+
+            }
+        });
     }
 
     private void toggleDarkTheme() {
