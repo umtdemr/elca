@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
     private void loadData() {
         ArrayList<Item> itemList = new ArrayList<>();
 
-        itemList.add(new Item(1, "Televizyon", 3, 50));
-        itemList.add(new Item(1, "Televizyon", 3, 50));
-        itemList.add(new Item(1, "Televizyon", 3, 50));
+        itemList.add(new Item(1, "Televizyon", 3.5, 50));
+        itemList.add(new Item(1, "Televizyon", 4, 50));
+        itemList.add(new Item(1, "Televizyon", 24, 50));
         itemList.add(new Item(1, "Televizyon", 3, 50));
         itemList.add(new Item(1, "Televizyon", 3, 50));
 

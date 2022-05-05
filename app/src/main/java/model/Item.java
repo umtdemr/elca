@@ -5,10 +5,10 @@ import java.io.Serializable;
 public class Item implements Serializable {
     private int id;
     private String title;
-    private float average_usage;
-    private float max_watt;
+    private double average_usage;
+    private double max_watt;
 
-   public Item(int id, String title, float average_usage, float max_watt) {
+   public Item(int id, String title, double average_usage, double max_watt) {
        this.id = id;
        this.title = title;
        this.average_usage = average_usage;
@@ -29,17 +29,17 @@ public class Item implements Serializable {
        this.title = title;
    }
 
-   public float getAverageUsage() {
+   public double getAverageUsage() {
        return average_usage;
    }
-   public void setAverageUsage(float average_usage) {
+   public void setAverageUsage(double average_usage) {
        this.average_usage = average_usage;
    }
 
-   public float getMaxWatt() {
+   public double getMaxWatt() {
        return max_watt;
    }
-   public void setMaxWatt(float max_watt) {
+   public void setMaxWatt(double max_watt) {
       this.max_watt = max_watt;
    }
 }

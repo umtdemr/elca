@@ -43,8 +43,8 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         holder.lblTitle.setText(item.getTitle());
 
         // TODO : Move to Correct property and Float to string
-        holder.lblAverageUsage.setText(item.getTitle());
-        holder.lblMaxWatt.setText(item.getTitle());
+        holder.lblMaxWatt.setText(String.valueOf(item.getMaxWatt()) + " watt");
+        holder.lblAverageUsage.setText(String.valueOf(item.getAverageUsage()) + " saat");
     }
 
     @Override
