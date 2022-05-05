@@ -13,8 +13,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private SwipeToAction swipeToAction;
     private SharedPreferences sharedPreferences;
     public Toolbar toolbar;
+    private FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +38,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initComponents();
+        registerEventHandlers();
         loadData();
     }
 
     private void initComponents() {
         recyclerView = findViewById(R.id.recyclerView);
+        floatingActionButton = findViewById(R.id.floatingActionButton);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
 
         toggleDarkTheme();
     }
+    private void registerEventHandlers() {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddItemActivity.class));
+            }
+        });
+    }
+
     private void loadData() {
         ArrayList<Item> itemList = new ArrayList<>();
 
