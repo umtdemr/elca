@@ -11,38 +11,5 @@
             layout="@layout/toolbar"
             />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/padding_layer"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
-           <TextView
-               android:id="@+id/lblTitle"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:textSize="@dimen/text_size_grande"
-               android:text="Televizyon" />
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/lblMaxWatt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_small"
-                    android:text="2.5 watt" />
-                <TextView
-                    android:id="@+id/lblAverageUsage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="24 saat" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-    </androidx.appcompat.widget.LinearLayoutCompat>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
