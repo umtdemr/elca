@@ -17,4 +17,9 @@
     <string name="add_item_has_error">Lütfen hatalı alanları düzeltin</string>
     <string name="add_item_empty_fields">Lütfen boş alanları doldurun</string>
     <string name="add_item_added">Eşya başarı ile eklendi</string>
+    <string name="item_delete_alert_title">Emin misiniz?</string>
+    <string name="item_delete_alert_message">Eşyayı silmek istediğinizden emin misiniz?</string>
+    <string name="item_delete_positive_button_title">Evet</string>
+    <string name="item_delete_negative_button_title">Hayır</string>
+    <string name="snackbar_action_back">Geri Al</string>
 </resources>

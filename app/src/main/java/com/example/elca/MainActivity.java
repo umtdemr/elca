@@ -162,11 +162,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void deleteItem(ItemEntity item) {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MainActivity.this);
-        alertBuilder.setTitle("Emin misiniz?");
-        alertBuilder.setMessage("Eşyayı silmek istediğinizden emin misiniz?");
+        alertBuilder.setTitle(getResources().getString(R.string.item_delete_alert_title));
+        alertBuilder.setMessage(getResources().getString(R.string.item_delete_alert_message));
         alertBuilder.setIcon(R.drawable.ic_warn);
 
-        alertBuilder.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+        alertBuilder.setPositiveButton(getResources().getString(R.string.item_delete_positive_button_title),
+                new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 itemDAO.deleteItem(item);
@@ -174,7 +175,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Snackbar snackbar = Snackbar.make(recyclerView,
                         item.getTitle() + " silindi", Snackbar.LENGTH_LONG);
-                snackbar.setAction("Geri Al", new View.OnClickListener() {
+                snackbar.setAction(getResources().getString(R.string.snackbar_action_back),
+                        new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         itemDAO.insertItem(item);
@@ -182,6 +184,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 snackbar.show();
+            }
+        });
+
+        alertBuilder.setNegativeButton(getResources().getString(R.string.item_delete_negative_button_title),
+                new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // do nothing
             }
         });
 
