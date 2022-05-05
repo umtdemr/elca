@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".AddItemActivity">
     <include
-        android:id="@+id/childToolbar"
+        android:id="@+id/addItemToolBar"
         layout="@layout/toolbar"
         />
     <androidx.appcompat.widget.LinearLayoutCompat
-        app:layout_constraintTop_toBottomOf="@id/childToolbar"
+        app:layout_constraintTop_toBottomOf="@id/addItemToolBar"
         android:padding="@dimen/padding_layer"
         android:layout_marginTop="@dimen/margin_global"
         android:layout_width="match_parent"

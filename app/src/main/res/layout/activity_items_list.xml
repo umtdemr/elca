@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ItemsListActivity">
     <include
-        android:id="@+id/childToolbarr"
+        android:id="@+id/itemListToolbar"
         layout="@layout/toolbar"
         />
     <LinearLayout

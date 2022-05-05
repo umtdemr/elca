@@ -16,8 +16,8 @@ public class ItemsListActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.childToolbarr);
-        toolbar.setTitle("Eşya Listesi");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.itemListToolbar);
+        toolbar.setTitle(getResources().getString(R.string.menu_item_list));
         setSupportActionBar(toolbar);
 
         ActionBar ab = getSupportActionBar();

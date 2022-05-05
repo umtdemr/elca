@@ -17,8 +17,8 @@ public class AddItemActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.childToolbar);
-        toolbar.setTitle("Eşya Ekle");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.addItemToolBar);
+        toolbar.setTitle(getResources().getString(R.string.menu_add_item));
         setSupportActionBar(toolbar);
 
         ActionBar ab = getSupportActionBar();
