@@ -13,4 +13,5 @@
     <string name="add_item_average_usage">Günlük Ortalama Kullanım (Saat)</string>
     <string name="add_item_average_usage_help">Buzdolabı gibi sürekli çalışan eşyalara 24 değeri girilmelidir.</string>
     <string name="add_item_double_error">Bu değer integer veya double olmalıdır. Örneğin: 3 veya 4.5 gibi</string>
+    <string name="add_item_average_usage_max_error">Ortalama kullanım 24 saatten fazla olamaz</string>
 </resources>

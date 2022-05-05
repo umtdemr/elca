@@ -86,7 +86,7 @@ public class AddItemActivity extends AppCompatActivity {
                     double averageUsage = Double.parseDouble(String.valueOf(text));
 
                     if (averageUsage > 24) {
-                        txtAverageUsageWrapper.setError("ortalama kullanım 24 saatten az olamaz");
+                        txtAverageUsageWrapper.setError(getResources().getString(R.string.add_item_average_usage_max_error));
                     } else {
                         txtAverageUsageWrapper.setError(null);
                     }
