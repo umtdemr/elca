@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddItemActivity">
+    <include
+        android:id="@+id/childToolbarr"
+        layout="@layout/toolbar"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textTitleWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="selam" />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
