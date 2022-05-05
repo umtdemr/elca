@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:padding="@dimen/padding_layer"
-        android:background="@color/royal_blue"
+        android:background="?android:colorBackground"
         android:tag="front">
         <TextView
             android:id="@+id/lblTitle"
@@ -47,7 +47,6 @@
             <TextView
                 android:id="@+id/lblAverageUsage"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white"
                 android:layout_height="wrap_content" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </RelativeLayout>
