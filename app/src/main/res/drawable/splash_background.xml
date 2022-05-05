@@ -4,11 +4,11 @@
         android:drawable="@drawable/bg_gradient"/>
     <item>
         <bitmap android:gravity="center"
-            android:src="@drawable/elca_logo"/>
+            android:src="@drawable/small_elca_icon"/>
     </item>
     <item android:bottom="20dp">
         <bitmap
             android:gravity="bottom"
-            android:src="@drawable/elca_slogan" />
+            android:src="@drawable/small_splash_slogan" />
     </item>
 </layer-list>
