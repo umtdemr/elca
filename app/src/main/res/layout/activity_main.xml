@@ -10,44 +10,7 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar"
             />
-    <androidx.appcompat.widget.LinearLayoutCompat
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/padding_layer"
-        >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            app:srcCompat="@drawable/no_data"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/margin_global"
-            />
-        <TextView
-            android:id="@+id/lblNoDataTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/no_data_title"
-            android:textSize="@dimen/text_size_big"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/lblNoDataTitle"
-            android:layout_marginTop="30dp"
-            android:text="@string/no_data_text"
-            android:textAlignment="center"
-            />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        <include
+            layout="@layout/main_no_data" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
