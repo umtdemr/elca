@@ -2,11 +2,17 @@
 <resources>
     <dimen name="margin_layer">10dp</dimen>
     <dimen name="padding_layer">10dp</dimen>
-    <dimen name="margin_global">30dp</dimen>
+    <dimen name="margin_global">30dp</dimen>  <!-- Margin between outer components -->
     <dimen name="padding_global">30dp</dimen>
+    <dimen name="margin_inner_components">20dp</dimen>  <!-- Margin between inner components -->
+    <dimen name="padding_inner_components">20dp</dimen>  <!-- Padding between inner components -->
+    <dimen name="margin_average">20dp</dimen>
     <dimen name="text_size_regular">12sp</dimen>
     <dimen name="text_size_big">16sp</dimen>
     <dimen name="text_size_grande">18sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
     <dimen name="text_size_small">10sp</dimen>
     <dimen name="text_size_smallest">8sp</dimen>
+    <dimen name="small_button_width">140dp</dimen>
+    <dimen name="small_button_corner_radius">70dp</dimen>
 </resources>

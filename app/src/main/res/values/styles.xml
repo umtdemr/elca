@@ -6,4 +6,30 @@
     <style name="ListTextSmall" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
+    <style name="TitleText" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+
+    <style name="FormTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ButtonSmall" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">@dimen/small_button_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding_inner_components</item>
+        <item name="cornerRadius">@dimen/small_button_corner_radius</item>
+    </style>
+    <style name="MaterialButtonInfo" parent="ButtonSmall">
+        <item name="backgroundTint">@color/royal_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="MaterialButtonDanger" parent="ButtonSmall">
+        <item name="backgroundTint">@color/red_salsa</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>
