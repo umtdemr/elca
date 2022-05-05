@@ -11,5 +11,6 @@
     <color name="red_salsa">#FFFB3460</color>
     <color name="granite_gray">#FF605F5E</color>
     <color name="blue_cg">#FF247BA0</color>
-    <color name="shark">#202124</color>
+    <color name="concrete">#FFF2F2F2</color>
+    <color name="shark">#FF202124</color>
 </resources>
