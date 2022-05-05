@@ -1,5 +1,6 @@
 package com.example.elca;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -82,8 +84,7 @@ public class MainActivity extends AppCompatActivity {
         swipeToAction = new SwipeToAction(recyclerView, new SwipeToAction.SwipeListener<ItemEntity>() {
             @Override
             public boolean swipeLeft(ItemEntity itemData) {
-                Snackbar snackbar = Snackbar.make(recyclerView, itemData.getTitle() + " sil", Snackbar.LENGTH_LONG);
-                snackbar.show();
+                deleteItem(itemData);
                 return true;
             }
 
@@ -157,5 +158,29 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void deleteItem(ItemEntity item) {
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MainActivity.this);
+        alertBuilder.setTitle("Emin misiniz?");
+        alertBuilder.setMessage("Eşyayı silmek istediğinizden emin misiniz?");
+        alertBuilder.setIcon(R.drawable.ic_warn);
+
+        alertBuilder.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                itemDAO.deleteItem(item);
+                reloadData();
+            }
+        });
+
+        AlertDialog alertDialog = alertBuilder.create();
+        alertDialog.show();
+    }
+    private void reloadData() {
+        ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(
+                itemDAO.loadAllItems()
+        );
+        recyclerView.setAdapter(adapter);
     }
 }
