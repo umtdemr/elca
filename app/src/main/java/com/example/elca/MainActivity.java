@@ -3,6 +3,7 @@ package com.example.elca;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -13,6 +14,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +24,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import adapter.ItemRecyclerViewAdapter;
 import co.dift.ui.SwipeToAction;
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     public Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
+    private LinearLayoutCompat noDataLayout;
 
     private AppDatabase appDatabase;
     private IItemDAO itemDAO;
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private void initComponents() {
         recyclerView = findViewById(R.id.recyclerView);
         floatingActionButton = findViewById(R.id.floatingActionButton);
+        noDataLayout = findViewById(R.id.noDataLayout);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -77,7 +82,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(llm);
         recyclerView.setHasFixedSize(true);
 
-        ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(itemDAO.loadAllItems());
+        List<ItemEntity> items = itemDAO.loadAllItems();
+
+        controlLayout(items.size() == 0);
+
+        ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(items);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
@@ -199,9 +208,20 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
     private void reloadData() {
-        ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(
-                itemDAO.loadAllItems()
-        );
+        List<ItemEntity> items = itemDAO.loadAllItems();
+        ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(items);
+        controlLayout(items.size() == 0);
+
         recyclerView.setAdapter(adapter);
+    }
+
+    private void controlLayout(boolean setNoDataLayoutVisible) {
+       if (setNoDataLayoutVisible) {
+           noDataLayout.setVisibility(View.VISIBLE);
+           recyclerView.setVisibility(View.GONE);
+       } else {
+           noDataLayout.setVisibility(View.GONE);
+           recyclerView.setVisibility(View.VISIBLE);
+       }
     }
 }

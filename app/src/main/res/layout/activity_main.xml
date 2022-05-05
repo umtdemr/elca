@@ -10,6 +10,10 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar"
             />
+        <include
+                android:id="@+id/noDataLayout"
+                android:visibility="gone"
+                layout="@layout/main_no_data" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
