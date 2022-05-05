@@ -63,7 +63,7 @@ public class AddItemActivity extends AppCompatActivity {
                 if (text.length() > 12) {
                     txtTitleWrapper.setError(getResources().getString(R.string.add_item_title_error_long));
                 } else {
-                    txtTitleWrapper.setError(null);
+                    txtTitleWrapper.setErrorEnabled(false);
                 }
             }
 
@@ -90,10 +90,10 @@ public class AddItemActivity extends AppCompatActivity {
                     if (averageUsage > 24) {
                         txtAverageUsageWrapper.setError(getResources().getString(R.string.add_item_average_usage_max_error));
                     } else {
-                        txtAverageUsageWrapper.setError(null);
+                        txtAverageUsageWrapper.setErrorEnabled(false);
                     }
                 } else {
-                    txtAverageUsageWrapper.setError(null);
+                    txtAverageUsageWrapper.setErrorEnabled(false);
                 }
             }
 
