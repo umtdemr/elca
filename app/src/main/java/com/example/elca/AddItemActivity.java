@@ -41,6 +41,7 @@ public class AddItemActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
+        txtTitleWrapper.getEditText().requestFocus();
     }
     private void registerEventHandlers() {
         controlTxtTitleValid();
