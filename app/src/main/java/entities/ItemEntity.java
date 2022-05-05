@@ -24,7 +24,7 @@ public class ItemEntity {
         this.id = id;
     }
 
-    public ItemEntity(int id, String title, double averageUsage, double maxWatt) {
+    public ItemEntity(String title, double averageUsage, double maxWatt) {
         this.id = id;
         this.title = title;
         this.averageUsage= averageUsage;

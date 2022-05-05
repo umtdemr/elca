@@ -16,4 +16,5 @@
     <string name="add_item_average_usage_max_error">Ortalama kullanım 24 saatten fazla olamaz</string>
     <string name="add_item_has_error">Lütfen hatalı alanları düzeltin</string>
     <string name="add_item_empty_fields">Lütfen boş alanları doldurun</string>
+    <string name="add_item_added">Eşya başarı ile eklendi</string>
 </resources>

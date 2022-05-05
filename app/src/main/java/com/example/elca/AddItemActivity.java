@@ -15,10 +15,16 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
+import dao.IItemDAO;
+import entities.ItemEntity;
+import model.AppDatabase;
+
 public class AddItemActivity extends AppCompatActivity {
-    private boolean isTitleValid = false, isAverageUsageValid = false, isMaxWattValid = false;  // control form valid
     private MaterialButton btnAdd;
     private TextInputLayout txtTitleWrapper, txtMaxWattWrapper, txtAverageUsageWrapper;
+
+    private AppDatabase appDatabase;
+    private IItemDAO itemDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,9 @@ public class AddItemActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 
         txtTitleWrapper.getEditText().requestFocus();
+
+        appDatabase = AppDatabase.getAppDatabase(AddItemActivity.this);
+        itemDAO = appDatabase.getItemDAO();
     }
     private void registerEventHandlers() {
         controlTxtTitleValid();
@@ -113,7 +122,7 @@ public class AddItemActivity extends AppCompatActivity {
                            txtAverageUsageWrapper.getEditText().getText().length() > 0 &&
                            txtMaxWattWrapper.getEditText().getText().length() > 0
                    ) {
-                       Toast.makeText(AddItemActivity.this, "gönderiliyor", Toast.LENGTH_LONG).show();
+                       addItem();
                    } else {
                        Toast.makeText(AddItemActivity.this,
                                getResources().getString(R.string.add_item_empty_fields),
@@ -126,5 +135,21 @@ public class AddItemActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void addItem() {
+        ItemEntity item = new ItemEntity(
+                txtTitleWrapper.getEditText().getText().toString(),
+                Double.parseDouble(txtAverageUsageWrapper.getEditText().getText().toString()),
+                Double.parseDouble(txtMaxWattWrapper.getEditText().getText().toString())
+        );
+
+        itemDAO.insertItem(item);
+
+        Toast.makeText(
+                AddItemActivity.this,
+                getResources().getString(R.string.add_item_added),
+                Toast.LENGTH_SHORT
+        ).show();
+
     }
 }
