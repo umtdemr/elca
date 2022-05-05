@@ -31,8 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_grande" />
+            style="@style/ListTextTitle" />
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,8 +43,7 @@
                 android:id="@+id/lblMaxWatt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_small" />
+                style="@style/ListTextSmall" />
             <TextView
                 android:id="@+id/lblAverageUsage"
                 android:layout_width="wrap_content"
