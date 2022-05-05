@@ -23,7 +23,7 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/FormTextInputLayout"
             android:layout_marginTop="@dimen/margin_layer"
-            android:id="@+id/textTitleWrapper">
+            android:id="@+id/txtTitleWrapper">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/FormTextInputLayout"
-            android:id="@+id/textMaxWattWrapper"
+            android:id="@+id/txtMaxWattWrapper"
             android:layout_marginTop="@dimen/margin_inner_components"
             app:helperText="@string/add_item_max_watt_help">
             <com.google.android.material.textfield.TextInputEditText
@@ -45,7 +45,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/FormTextInputLayout"
-            android:id="@+id/textAverageUsageWrapper"
+            android:id="@+id/txtAverageUsageWrapper"
             android:layout_marginTop="@dimen/margin_inner_components"
             app:helperText="@string/add_item_average_usage_help">
             <com.google.android.material.textfield.TextInputEditText
@@ -56,6 +56,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
             android:layout_marginTop="@dimen/margin_global"
             android:layout_gravity="center"
             style="@style/MaterialButtonInfo"
