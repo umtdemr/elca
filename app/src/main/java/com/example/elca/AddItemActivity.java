@@ -115,12 +115,12 @@ public class AddItemActivity extends AppCompatActivity {
                        Toast.makeText(AddItemActivity.this, "gönderiliyor", Toast.LENGTH_LONG).show();
                    } else {
                        Toast.makeText(AddItemActivity.this,
-                               "Tüm alanların dolu ve hatasız olduğundan emin olun",
+                               getResources().getString(R.string.add_item_empty_fields),
                                Toast.LENGTH_SHORT).show();
                    }
                 } else {
                     Toast.makeText(AddItemActivity.this,
-                            "Tüm alanların dolu ve hatasız olduğundan emin olun",
+                            getResources().getString(R.string.add_item_has_error),
                             Toast.LENGTH_SHORT).show();
                 }
             }
