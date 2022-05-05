@@ -171,6 +171,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 itemDAO.deleteItem(item);
                 reloadData();
+
+                Snackbar snackbar = Snackbar.make(recyclerView,
+                        item.getTitle() + " silindi", Snackbar.LENGTH_LONG);
+                snackbar.setAction("Geri Al", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        itemDAO.insertItem(item);
+                        reloadData();
+                    }
+                });
+                snackbar.show();
             }
         });
 
