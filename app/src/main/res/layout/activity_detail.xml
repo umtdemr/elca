@@ -20,7 +20,7 @@
             <TableRow>
                 <TextView
                     style="@style/TableLabel"
-                    android:text="Beklenen aylık fatura:" />
+                    android:text="@string/detail_invoice_price" />
                 <TextView
                     style="@style/TableLabel"
                     android:id="@+id/lblUsage"
@@ -30,7 +30,7 @@
             <TableRow>
                 <TextView
                     style="@style/TableLabel"
-                    android:text="Aylık kullanılan toplam güç:" />
+                    android:text="@string/detail_monthly_usage" />
                 <TextView
                     style="@style/TableLabel"
                     android:layout_gravity="right"
@@ -40,7 +40,7 @@
             <TableRow>
                 <TextView
                     style="@style/TableLabel"
-                    android:text="Günlük kullanılan toplam güç:" />
+                    android:text="@string/detail_daily_usage" />
                 <TextView
                     style="@style/TableLabel"
                     android:layout_gravity="right"
@@ -50,7 +50,7 @@
             <TableRow>
                 <TextView
                     style="@style/TableLabel"
-                    android:text="Haftalık kullanılan toplam güç:" />
+                    android:text="@string/detail_weekly_usage" />
                 <TextView
                     style="@style/TableLabel"
                     android:layout_gravity="right"

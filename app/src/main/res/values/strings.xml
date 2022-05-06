@@ -22,4 +22,8 @@
     <string name="item_delete_positive_button_title">Evet</string>
     <string name="item_delete_negative_button_title">Hayır</string>
     <string name="snackbar_action_back">Geri Al</string>
+    <string name="detail_invoice_price">Beklenei aylık fatura:</string>
+    <string name="detail_monthly_usage">Aylık kullanılan toplam güç:</string>
+    <string name="detail_daily_usage">Günlük kullanılan toplam güç:</string>
+    <string name="detail_weekly_usage">Haftalık kullanılan toplam güç:</string>
 </resources>
