@@ -11,7 +11,7 @@ public class ItemUsage {
 
     public ItemUsage(ItemEntity item) {
         this.item = item;
-        this.kiloWattUsage = 1000 / item.getMaxWatt();
+        this.kiloWattUsage = item.getMaxWatt() / 1000;
         this.dailyUsage = this.kiloWattUsage * item.getAverageUsage();
         this.weeklyUsage = this.dailyUsage * 7;
         this.monthlyUsage = this.dailyUsage * 30;
