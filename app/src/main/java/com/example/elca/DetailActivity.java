@@ -41,9 +41,8 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-        // todo: control no data layout
         List<ItemEntity> items = itemDAO.loadAllItems();
         ItemUsageList itemUsageList = new ItemUsageList(items);
-        lblUsage.setText(String.valueOf(itemUsageList.getMonthlyTotalUsage()));
+        lblUsage.setText(String.valueOf(itemUsageList.getMonthlyInvoicePrice()) + " ₺");
     }
 }
