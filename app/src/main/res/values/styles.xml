@@ -12,6 +12,12 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">@dimen/text_size_title</item>
     </style>
+    <style name="SmallTitleText" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
+    </style>
 
     <style name="FormTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="android:layout_width">match_parent</item>
@@ -32,11 +38,11 @@
         <item name="android:textColor">@color/white</item>
     </style>
     <style name="TableLabel" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textSize">@dimen/text_size_table</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">@dimen/padding_layer</item>
-        <item name="android:paddingBottom">@dimen/padding_layer</item>
+        <item name="android:paddingTop">@dimen/padding_table_row</item>
+        <item name="android:paddingBottom">@dimen/padding_table_row</item>
     </style>
 
 </resources>

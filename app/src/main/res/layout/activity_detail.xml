@@ -12,9 +12,20 @@
         app:layout_constraintTop_toBottomOf="@id/detailToolBar"
         android:layout_width="match_parent"
         android:padding="@dimen/padding_layer"
+        android:orientation="vertical"
         android:layout_height="wrap_content">
+        <TextView
+            style="@style/SmallTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kullanım Bilgileri" />
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_marginTop="@dimen/margin_layer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <TableLayout
             android:stretchColumns="1"
+            android:layout_marginTop="@dimen/margin_layer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TableRow>
