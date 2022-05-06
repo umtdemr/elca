@@ -10,16 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Elca">
         <activity
-            android:name=".AddItemActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.elca.MainActivity" />
-        </activity>
+            android:name=".DetailActivity"
+            android:exported="false" />
         <activity
-            android:name=".ItemsListActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:name=".AddItemActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.elca.MainActivity" />
