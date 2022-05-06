@@ -6,7 +6,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
+import dao.IItemDAO;
+import model.AppDatabase;
+
 public class DetailActivity extends AppCompatActivity {
+    private AppDatabase appDatabase;
+    private IItemDAO itemDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +27,8 @@ public class DetailActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+        appDatabase = AppDatabase.getAppDatabase(DetailActivity.this);
+        itemDAO = appDatabase.getItemDAO();
     }
 }
