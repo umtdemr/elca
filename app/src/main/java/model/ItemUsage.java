@@ -17,16 +17,16 @@ public class ItemUsage {
         this.monthlyUsage = this.dailyUsage * 30;
     }
 
-    private double getKiloWattUsage() {
+    public double getKiloWattUsage() {
         return kiloWattUsage;
     }
-    private double getDailyUsage() {
+    public double getDailyUsage() {
         return dailyUsage;
     }
-    private double getWeeklyUsage() {
+    public double getWeeklyUsage() {
         return weeklyUsage;
     }
-    private double getMonthlyUsage() {
+    public double getMonthlyUsage() {
         return monthlyUsage;
     }
 }
