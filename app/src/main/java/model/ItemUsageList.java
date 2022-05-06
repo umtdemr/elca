@@ -1,16 +1,21 @@
 package model;
 
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import entities.ItemEntity;
 
 public class ItemUsageList {
     private double  weeklyTotalUsage, dailyTotalUsage, monthlyTotalUsage;
-    private List<ItemUsage> itemUsages;
+    private ArrayList<ItemUsage> itemUsages = new ArrayList<ItemUsage>();
 
     public ItemUsageList(List<ItemEntity> items) {
-       for (int i = 0; i < items.size(); i++) {
-           itemUsages.add(new ItemUsage(items.get(i)));
+        for (int i = 0; i < items.size(); i++) {
+            ItemUsage itemUsage = new ItemUsage(items.get(i));
+            itemUsages.add(itemUsage);
        }
     }
     public double getDailyTotalUsage() {
