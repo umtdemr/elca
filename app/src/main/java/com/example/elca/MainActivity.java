@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_item_list:
-                //Intent itemListIntent = new Intent(MainActivity.this, ItemsListActivity.class);
-                //startActivity(itemListIntent);
+                Intent itemListIntent = new Intent(MainActivity.this, DetailActivity.class);
+                startActivity(itemListIntent);
                 return true;
             case R.id.action_add_item:
                 Intent addItemIntent = new Intent(MainActivity.this, AddItemActivity.class);
