@@ -7,8 +7,8 @@
         android:title="@string/menu_dark_theme_active"
         app:showAsAction="ifRoom"
          />
-    <item android:id="@+id/action_item_list"
-        android:title="@string/menu_item_list"
+    <item android:id="@+id/action_detail_usage"
+        android:title="@string/menu_usage_detail"
         app:showAsAction="never" />
     <item android:id="@+id/action_add_item"
         android:title="@string/menu_add_item"

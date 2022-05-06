@@ -17,7 +17,7 @@ public class DetailActivity extends AppCompatActivity {
     }
     private void initComponents() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.detailToolBar);
-        toolbar.setTitle("Detay");
+        toolbar.setTitle(getResources().getString(R.string.menu_usage_detail));
         setSupportActionBar(toolbar);
 
         ActionBar ab = getSupportActionBar();

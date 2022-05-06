@@ -4,8 +4,9 @@
     <string name="no_data_text">Elektronik eşya verisi bulunamadı. Lütfen menüden elektronik eşya ekleyerek başlayın.</string>
     <string name="menu_item_list">Eşya Listesi</string>
     <string name="menu_add_item">Eşya Ekle</string>
-    <string name="menu_dark_theme_active">Karanlık temayı aktifleştir</string>
+    <string name="menu_usage_detail">Kullanım Detayı</string>
     <string name="menu_dark_theme_inactive">Karanlık temayı deaktif et</string>
+    <string name="menu_dark_theme_active">Karanlık temayı aktifleştir</string>
     <string name="add_item_title">Eşya Adı</string>
     <string name="add_item_title_error_long">Eşya adı çok uzun. Daha kısa bir ad girmeyi deneyin veya kısaltma kullanın.</string>
     <string name="add_item_max_watt">Güç</string>
