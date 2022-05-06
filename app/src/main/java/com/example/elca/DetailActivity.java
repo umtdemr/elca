@@ -17,7 +17,7 @@ import model.ItemUsageList;
 public class DetailActivity extends AppCompatActivity {
     private AppDatabase appDatabase;
     private IItemDAO itemDAO;
-    private TextView lblUsage;
+    private TextView lblInvoicePrice, lblMonthlyUsage, lblDailyUsage, lblWeeklyUsage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,10 @@ public class DetailActivity extends AppCompatActivity {
         loadData();
     }
     private void initComponents() {
-        lblUsage = findViewById(R.id.lblUsage);
+        lblInvoicePrice = findViewById(R.id.lblInvoicePrice);
+        lblMonthlyUsage = findViewById(R.id.lblMonthlyUsage);
+        lblDailyUsage = findViewById(R.id.lblDailyUsage);
+        lblWeeklyUsage = findViewById(R.id.lblWeeklyUsage);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detailToolBar);
         toolbar.setTitle(getResources().getString(R.string.menu_usage_detail));
         setSupportActionBar(toolbar);
@@ -43,6 +46,9 @@ public class DetailActivity extends AppCompatActivity {
     private void loadData() {
         List<ItemEntity> items = itemDAO.loadAllItems();
         ItemUsageList itemUsageList = new ItemUsageList(items);
-        lblUsage.setText(String.valueOf(itemUsageList.getMonthlyInvoicePrice()) + " ₺");
+        lblInvoicePrice.setText(String.valueOf(itemUsageList.getMonthlyInvoicePrice()) + "₺");
+        lblMonthlyUsage.setText(String.valueOf(itemUsageList.getMonthlyTotalUsage()) + " kilo watt");
+        lblDailyUsage.setText(String.valueOf(itemUsageList.getDailyTotalUsage()) + " kilo watt");
+        lblWeeklyUsage.setText(String.valueOf(itemUsageList.getWeeklyTotalUsage()) + " kilo watt");
     }
 }

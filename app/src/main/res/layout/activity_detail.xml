@@ -23,7 +23,7 @@
                     android:text="@string/detail_invoice_price" />
                 <TextView
                     style="@style/TableLabel"
-                    android:id="@+id/lblUsage"
+                    android:id="@+id/lblInvoicePrice"
                     android:layout_gravity="right"
                     android:text="240 ₺" />
             </TableRow>
@@ -34,7 +34,7 @@
                 <TextView
                     style="@style/TableLabel"
                     android:layout_gravity="right"
-                    android:id="@+id/lblKWUsage"
+                    android:id="@+id/lblMonthlyUsage"
                     android:text="200 kwatt" />
             </TableRow>
             <TableRow>
@@ -44,7 +44,7 @@
                 <TextView
                     style="@style/TableLabel"
                     android:layout_gravity="right"
-                    android:id="@+id/lblDailyKWUsage"
+                    android:id="@+id/lblDailyUsage"
                     android:text="200 kwatt" />
             </TableRow>
             <TableRow>
@@ -54,7 +54,7 @@
                 <TextView
                     style="@style/TableLabel"
                     android:layout_gravity="right"
-                    android:id="@+id/lblWeeklyKWUsage"
+                    android:id="@+id/lblWeeklyUsage"
                     android:text="200 kwatt" />
             </TableRow>
         </TableLayout>
