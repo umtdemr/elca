@@ -31,5 +31,12 @@
         <item name="backgroundTint">@color/red_salsa</item>
         <item name="android:textColor">@color/white</item>
     </style>
+    <style name="TableLabel" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/padding_layer</item>
+        <item name="android:paddingBottom">@dimen/padding_layer</item>
+    </style>
 
 </resources>

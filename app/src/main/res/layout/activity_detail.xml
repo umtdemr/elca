@@ -19,67 +19,43 @@
             android:layout_height="wrap_content">
             <TableRow>
                 <TextView
-                    android:textSize="@dimen/text_size_big"
-                    android:paddingVertical="@dimen/padding_layer"
-                    android:layout_width="wrap_content"
-                    android:text="Beklenen aylık fatura:"
-                    android:layout_height="wrap_content" />
+                    style="@style/TableLabel"
+                    android:text="Beklenen aylık fatura:" />
                 <TextView
-                    android:textSize="@dimen/text_size_big"
-                    android:paddingVertical="@dimen/padding_layer"
+                    style="@style/TableLabel"
                     android:id="@+id/lblUsage"
                     android:layout_gravity="right"
-                    android:layout_width="wrap_content"
-                    android:text="240 ₺"
-                    android:layout_height="wrap_content" />
+                    android:text="240 ₺" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:textSize="@dimen/text_size_big"
-                    android:paddingVertical="@dimen/padding_layer"
-                    android:layout_width="wrap_content"
-                    android:text="Aylık kullanılan toplam güç:"
-                    android:layout_height="wrap_content" />
+                    style="@style/TableLabel"
+                    android:text="Aylık kullanılan toplam güç:" />
                 <TextView
-                    android:textSize="@dimen/text_size_big"
-                    android:paddingVertical="@dimen/padding_layer"
+                    style="@style/TableLabel"
                     android:layout_gravity="right"
                     android:id="@+id/lblKWUsage"
-                    android:layout_width="wrap_content"
-                    android:text="200 kwatt"
-                    android:layout_height="wrap_content" />
+                    android:text="200 kwatt" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:textSize="@dimen/text_size_big"
-                    android:paddingVertical="@dimen/padding_layer"
-                    android:layout_width="wrap_content"
-                    android:text="Günlük kullanılan toplam güç:"
-                    android:layout_height="wrap_content" />
+                    style="@style/TableLabel"
+                    android:text="Günlük kullanılan toplam güç:" />
                 <TextView
-                    android:textSize="@dimen/text_size_big"
-                    android:paddingVertical="@dimen/padding_layer"
+                    style="@style/TableLabel"
                     android:layout_gravity="right"
                     android:id="@+id/lblDailyKWUsage"
-                    android:layout_width="wrap_content"
-                    android:text="200 kwatt"
-                    android:layout_height="wrap_content" />
+                    android:text="200 kwatt" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:textSize="@dimen/text_size_big"
-                    android:paddingVertical="@dimen/padding_layer"
-                    android:layout_width="wrap_content"
-                    android:text="Haftalık kullanılan toplam güç:"
-                    android:layout_height="wrap_content" />
+                    style="@style/TableLabel"
+                    android:text="Haftalık kullanılan toplam güç:" />
                 <TextView
-                    android:textSize="@dimen/text_size_big"
-                    android:paddingVertical="@dimen/padding_layer"
+                    style="@style/TableLabel"
                     android:layout_gravity="right"
                     android:id="@+id/lblWeeklyKWUsage"
-                    android:layout_width="wrap_content"
-                    android:text="200 kwatt"
-                    android:layout_height="wrap_content" />
+                    android:text="200 kwatt" />
             </TableRow>
         </TableLayout>
 
