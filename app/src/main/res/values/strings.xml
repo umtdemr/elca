@@ -9,7 +9,7 @@
     <string name="add_item_title">Eşya Adı</string>
     <string name="add_item_title_error_long">Eşya adı çok uzun. Daha kısa bir ad girmeyi deneyin veya kısaltma kullanın.</string>
     <string name="add_item_max_watt">Güç</string>
-    <string name="add_item_max_watt_help">Eşyanın kullandığı gücü watt olarak yazın. Eğer bir güç skalası varsa maksimum gücü yazın.o</string>
+    <string name="add_item_max_watt_help">Eşyanın kullandığı gücü watt olarak yazın. Eğer bir güç skalası varsa maksimum gücü yazın.</string>
     <string name="add_item_average_usage">Günlük Ortalama Kullanım (Saat)</string>
     <string name="add_item_average_usage_help">Buzdolabı gibi sürekli çalışan eşyalara 24 değeri girilmelidir.</string>
     <string name="add_item_double_error">Bu değer integer veya double olmalıdır. Örneğin: 3 veya 4.5 gibi</string>
