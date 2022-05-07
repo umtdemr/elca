@@ -87,7 +87,8 @@ public class DetailActivity extends AppCompatActivity {
        for (int c : ColorTemplate.PASTEL_COLORS)
            colors.add(c);
 
-       PieDataSet dataSet = new PieDataSet(entries, "Elektronik Eşyalar");
+       PieDataSet dataSet = new PieDataSet(entries,
+               getResources().getString(R.string.detail_chart_legend_title));
        dataSet.setColors(colors);
 
        PieData data = new PieData(dataSet);
@@ -104,7 +105,7 @@ public class DetailActivity extends AppCompatActivity {
         pieChart.setUsePercentValues(true);
         pieChart.setEntryLabelTextSize(12);
         pieChart.setEntryLabelColor(Color.BLACK);
-        pieChart.setCenterText("Aylık güç kullanım grafiği");
+        pieChart.setCenterText(getResources().getString(R.string.detail_chart_title));
         pieChart.setCenterTextSize(17);
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
