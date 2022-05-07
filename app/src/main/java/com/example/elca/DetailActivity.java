@@ -67,11 +67,13 @@ public class DetailActivity extends AppCompatActivity {
         lblWeeklyUsage.setText(String.format("%,.2f", itemUsageList.getWeeklyTotalUsage()) + " kilo watt");
 
         ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(0.2f, "Food & Dining"));
-        entries.add(new PieEntry(0.1f, "Something"));
-        entries.add(new PieEntry(0.4f, "Merhb"));
-        entries.add(new PieEntry(0.3f, "Deneme"));
-
+        for (int i=0; i<itemUsageList.getListSize(); i++) {
+            ItemUsage itemUsage = itemUsageList.getItemUsageData(i);
+            entries.add(new PieEntry(
+                    (float) itemUsage.getMonthlyUsage(),
+                    itemUsage.getItemTitle()
+            ));
+        }
        ArrayList<Integer> colors = new ArrayList<>();
        for (int color : ColorTemplate.MATERIAL_COLORS) {
            colors.add(color);
@@ -80,7 +82,7 @@ public class DetailActivity extends AppCompatActivity {
            colors.add(color);
        }
 
-       PieDataSet dataSet = new PieDataSet(entries, "Expense Category");
+       PieDataSet dataSet = new PieDataSet(entries, "Elektronik Eşyalar");
        dataSet.setColors(colors);
 
        PieData data = new PieData(dataSet);
@@ -97,8 +99,8 @@ public class DetailActivity extends AppCompatActivity {
         pieChart.setUsePercentValues(true);
         pieChart.setEntryLabelTextSize(12);
         pieChart.setEntryLabelColor(Color.BLACK);
-        pieChart.setCenterText("Spending cat");
-        pieChart.setCenterTextSize(24);
+        pieChart.setCenterText("Aylık güç kullanım grafiği");
+        pieChart.setCenterTextSize(17);
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
         pieChart.setTransparentCircleColor(Color.WHITE);

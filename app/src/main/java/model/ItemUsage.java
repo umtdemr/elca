@@ -29,4 +29,8 @@ public class ItemUsage {
     public double getMonthlyUsage() {
         return monthlyUsage;
     }
+
+    public String getItemTitle() {
+        return item.getTitle();
+    }
 }
