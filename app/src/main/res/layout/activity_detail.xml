@@ -9,7 +9,7 @@
         android:id="@+id/detailToolBar"
         layout="@layout/toolbar" />
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayout"
+        android:id="@+id/detailLayout"
         app:layout_constraintTop_toBottomOf="@id/detailToolBar"
         android:layout_width="match_parent"
         android:paddingTop="@dimen/padding_toolbar"

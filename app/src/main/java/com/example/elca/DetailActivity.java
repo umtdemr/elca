@@ -2,10 +2,12 @@ package com.example.elca;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -30,6 +32,7 @@ public class DetailActivity extends AppCompatActivity {
     private IItemDAO itemDAO;
     private TextView lblInvoicePrice, lblMonthlyUsage, lblDailyUsage, lblWeeklyUsage;
     private PieChart pieChart;
+    private LinearLayoutCompat detailLayout, noDataLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,8 @@ public class DetailActivity extends AppCompatActivity {
         loadData();
     }
     private void initComponents() {
+        detailLayout = findViewById(R.id.detailLayout);
+        noDataLayout = findViewById(R.id.noDataLayoutDetail);
         lblInvoicePrice = findViewById(R.id.lblInvoicePrice);
         lblMonthlyUsage = findViewById(R.id.lblMonthlyUsage);
         lblDailyUsage = findViewById(R.id.lblDailyUsage);
@@ -55,7 +60,15 @@ public class DetailActivity extends AppCompatActivity {
 
         appDatabase = AppDatabase.getAppDatabase(DetailActivity.this);
         itemDAO = appDatabase.getItemDAO();
-
+    }
+    private void controlLayout(boolean setNoDataLayoutVisible) {
+        if (setNoDataLayoutVisible) {
+            noDataLayout.setVisibility(View.VISIBLE);
+            detailLayout.setVisibility(View.GONE);
+        } else {
+            noDataLayout.setVisibility(View.GONE);
+            detailLayout.setVisibility(View.VISIBLE);
+        }
     }
 
     private void loadData() {
@@ -65,6 +78,8 @@ public class DetailActivity extends AppCompatActivity {
         lblMonthlyUsage.setText(String.format("%,.2f", itemUsageList.getMonthlyTotalUsage()) + " kilo watt");
         lblDailyUsage.setText(String.format("%,.2f",itemUsageList.getDailyTotalUsage()) + " kilo watt");
         lblWeeklyUsage.setText(String.format("%,.2f", itemUsageList.getWeeklyTotalUsage()) + " kilo watt");
+
+        controlLayout(items.size() == 0);
 
         ArrayList<PieEntry> entries = new ArrayList<>();
         for (int i=0; i<itemUsageList.getListSize(); i++) {
