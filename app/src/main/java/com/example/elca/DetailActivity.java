@@ -96,11 +96,11 @@ public class DetailActivity extends AppCompatActivity {
        for (int color : ColorTemplate.VORDIPLOM_COLORS) {
            colors.add(color);
        }
-       for (int c : ColorTemplate.LIBERTY_COLORS)
-           colors.add(c);
+       for (int color : ColorTemplate.LIBERTY_COLORS)
+           colors.add(color);
 
-       for (int c : ColorTemplate.PASTEL_COLORS)
-           colors.add(c);
+       for (int color : ColorTemplate.PASTEL_COLORS)
+           colors.add(color);
 
        PieDataSet dataSet = new PieDataSet(entries,
                getResources().getString(R.string.detail_chart_legend_title));
@@ -127,14 +127,8 @@ public class DetailActivity extends AppCompatActivity {
         pieChart.setTransparentCircleColor(Color.WHITE);
         pieChart.setTransparentCircleAlpha(110);
 
-        Legend l = pieChart.getLegend();
-        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
-        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
-        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
-        l.setDrawInside(false);
-        l.setEnabled(false);
-        l.setXEntrySpace(7f);
-        l.setYEntrySpace(0f);
-        l.setYOffset(0f);
+        Legend legendPieChart = pieChart.getLegend();
+        legendPieChart.setDrawInside(false);
+        legendPieChart.setEnabled(false);
     }
 }
