@@ -22,6 +22,7 @@ import java.util.List;
 import dao.IItemDAO;
 import entities.ItemEntity;
 import model.AppDatabase;
+import model.ItemUsage;
 import model.ItemUsageList;
 
 public class DetailActivity extends AppCompatActivity {
@@ -55,41 +56,6 @@ public class DetailActivity extends AppCompatActivity {
         appDatabase = AppDatabase.getAppDatabase(DetailActivity.this);
         itemDAO = appDatabase.getItemDAO();
 
-        /*
-        pieChart.setUsePercentValues(true);
-        pieChart.getDescription().setEnabled(false);
-
-        pieChart.setCenterText("selam");
-
-        pieChart.setDrawHoleEnabled(true);
-        pieChart.setHoleColor(Color.WHITE);
-
-        pieChart.setTransparentCircleColor(Color.WHITE);
-        pieChart.setTransparentCircleAlpha(110);
-
-        pieChart.setHoleRadius(58f);
-        pieChart.setTransparentCircleRadius(61f);
-
-        pieChart.setDrawCenterText(true);
-
-        pieChart.setRotationAngle(0);
-        // enable rotation of the chart by touch
-        pieChart.setRotationEnabled(true);
-        pieChart.setHighlightPerTapEnabled(true);
-
-        Legend l = pieChart.getLegend();
-        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
-        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
-        l.setOrientation(Legend.LegendOrientation.VERTICAL);
-        l.setDrawInside(false);
-        l.setXEntrySpace(7f);
-        l.setYEntrySpace(0f);
-        l.setYOffset(0f);
-
-        // entry label styling
-        pieChart.setEntryLabelColor(Color.WHITE);
-        pieChart.setEntryLabelTextSize(12f);
-        */
     }
 
     private void loadData() {
@@ -135,8 +101,8 @@ public class DetailActivity extends AppCompatActivity {
         pieChart.setCenterTextSize(24);
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
-
-        pieChart.setDragDecelerationFrictionCoef(0.95f);
+        pieChart.setTransparentCircleColor(Color.WHITE);
+        pieChart.setTransparentCircleAlpha(110);
 
         Legend l = pieChart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
