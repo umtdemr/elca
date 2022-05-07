@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-anydpi/ic_add.xml" value="0.1005" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_warn.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-anydpi/splash_slogan.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_baseline_nights_stay_24.xml" value="0.1005" />
+        <entry key="app/src/main/res/drawable/ic_baseline_wb_sunny_24.xml" value="0.1005" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.2085" />
         <entry key="app/src/main/res/layout/activity_add_item.xml" value="0.30821380615234373" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.2940074906367041" />
