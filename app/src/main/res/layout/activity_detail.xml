@@ -7,8 +7,6 @@
     tools:context=".DetailActivity">
     <include
         android:id="@+id/detailToolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         layout="@layout/toolbar" />
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayout"
@@ -79,4 +77,8 @@
             android:layout_height="match_parent" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+    <include
+        android:visibility="gone"
+        android:id="@+id/noDataLayoutDetail"
+        layout="@layout/main_no_data" />
 </androidx.constraintlayout.widget.ConstraintLayout>
