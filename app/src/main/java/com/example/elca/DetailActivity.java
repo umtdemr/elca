@@ -46,9 +46,9 @@ public class DetailActivity extends AppCompatActivity {
     private void loadData() {
         List<ItemEntity> items = itemDAO.loadAllItems();
         ItemUsageList itemUsageList = new ItemUsageList(items);
-        lblInvoicePrice.setText(String.valueOf(itemUsageList.getMonthlyInvoicePrice()) + "₺");
-        lblMonthlyUsage.setText(String.valueOf(itemUsageList.getMonthlyTotalUsage()) + " kilo watt");
-        lblDailyUsage.setText(String.valueOf(itemUsageList.getDailyTotalUsage()) + " kilo watt");
-        lblWeeklyUsage.setText(String.valueOf(itemUsageList.getWeeklyTotalUsage()) + " kilo watt");
+        lblInvoicePrice.setText(String.format("%,.2f", itemUsageList.getMonthlyInvoicePrice()) + "₺");
+        lblMonthlyUsage.setText(String.format("%,.2f", itemUsageList.getMonthlyTotalUsage()) + " kilo watt");
+        lblDailyUsage.setText(String.format("%,.2f",itemUsageList.getDailyTotalUsage()) + " kilo watt");
+        lblWeeklyUsage.setText(String.format("%,.2f", itemUsageList.getWeeklyTotalUsage()) + " kilo watt");
     }
 }
