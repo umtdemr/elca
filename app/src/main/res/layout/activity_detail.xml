@@ -7,13 +7,19 @@
     tools:context=".DetailActivity">
     <include
         android:id="@+id/detailToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         layout="@layout/toolbar" />
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@id/detailToolBar"
         android:layout_width="match_parent"
-        android:padding="@dimen/padding_layer"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:paddingTop="@dimen/padding_toolbar"
+        android:paddingBottom="@dimen/padding_global"
+        android:paddingLeft="@dimen/padding_layer"
+        android:paddingRight="@dimen/padding_layer"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
         <TextView
             style="@style/SmallTitleText"
             android:layout_width="wrap_content"
@@ -65,8 +71,12 @@
                     android:id="@+id/lblWeeklyUsage" />
             </TableRow>
         </TableLayout>
-
+        <com.github.mikephil.charting.charts.PieChart
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/margin_global"
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

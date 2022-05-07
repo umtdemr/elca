@@ -5,6 +5,7 @@
     <dimen name="margin_global">30dp</dimen>  <!-- Margin between outer components -->
     <dimen name="padding_global">30dp</dimen>
     <dimen name="padding_table_row">5dp</dimen>
+    <dimen name="padding_toolbar">70dp</dimen>
     <dimen name="margin_inner_components">20dp</dimen>  <!-- Margin between inner components -->
     <dimen name="padding_inner_components">20dp</dimen>  <!-- Padding between inner components -->
     <dimen name="margin_average">20dp</dimen>
