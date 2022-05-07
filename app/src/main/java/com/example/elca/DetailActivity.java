@@ -81,6 +81,11 @@ public class DetailActivity extends AppCompatActivity {
        for (int color : ColorTemplate.VORDIPLOM_COLORS) {
            colors.add(color);
        }
+       for (int c : ColorTemplate.LIBERTY_COLORS)
+           colors.add(c);
+
+       for (int c : ColorTemplate.PASTEL_COLORS)
+           colors.add(c);
 
        PieDataSet dataSet = new PieDataSet(entries, "Elektronik Eşyalar");
        dataSet.setColors(colors);
@@ -107,11 +112,11 @@ public class DetailActivity extends AppCompatActivity {
         pieChart.setTransparentCircleAlpha(110);
 
         Legend l = pieChart.getLegend();
-        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
-        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
         l.setDrawInside(false);
-        l.setEnabled(true);
+        l.setEnabled(false);
         l.setXEntrySpace(7f);
         l.setYEntrySpace(0f);
         l.setYOffset(0f);
