@@ -53,4 +53,8 @@ public class ItemUsageList {
         total += totalUsageKW * cheapPrice;
         return total;
     }
+
+    public ItemUsage getItemUsageData(int position) {
+        return itemUsages.get(position);
+    }
 }
