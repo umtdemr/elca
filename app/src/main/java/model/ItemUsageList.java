@@ -54,6 +54,14 @@ public class ItemUsageList {
         return total;
     }
 
+    public int getListSize() {
+        return itemUsages.size();
+    }
+
+    public List<ItemUsage> getListItemUsageData() {
+        return itemUsages;
+    }
+
     public ItemUsage getItemUsageData(int position) {
         return itemUsages.get(position);
     }
