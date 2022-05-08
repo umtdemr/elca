@@ -43,6 +43,8 @@ public class DetailActivity extends AppCompatActivity {
         setupPieChart();
         loadData();
     }
+
+    // Activity değişkenlerini layout ile eşleştir
     private void initComponents() {
         detailLayout = findViewById(R.id.detailLayout);
         noDataLayout = findViewById(R.id.noDataLayoutDetail);
@@ -61,6 +63,8 @@ public class DetailActivity extends AppCompatActivity {
         appDatabase = AppDatabase.getAppDatabase(DetailActivity.this);
         itemDAO = appDatabase.getItemDAO();
     }
+
+    // hiç veri olmaması durumunda no data layout'u göster
     private void controlLayout(boolean setNoDataLayoutVisible) {
         if (setNoDataLayoutVisible) {
             noDataLayout.setVisibility(View.VISIBLE);
@@ -71,6 +75,8 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+    // veritabanında kayıtlı eşyaları kullanarak ItemUsageList sınıfı ile hesap yapma, grafiği
+    // yükleme
     private void loadData() {
         List<ItemEntity> items = itemDAO.loadAllItems();
         ItemUsageList itemUsageList = new ItemUsageList(items);
@@ -115,6 +121,7 @@ public class DetailActivity extends AppCompatActivity {
        pieChart.invalidate();
     }
 
+    // grafik için gerekli ayarlamalar
     private void setupPieChart() {
         pieChart.setDrawHoleEnabled(true);
         pieChart.setUsePercentValues(true);
