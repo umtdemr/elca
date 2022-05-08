@@ -53,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         registerEventHandlers();
         loadData();
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        reloadData();
+    }
 
     private void initComponents() {
         recyclerView = findViewById(R.id.recyclerView);
