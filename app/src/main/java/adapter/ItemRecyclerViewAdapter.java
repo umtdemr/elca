@@ -13,7 +13,6 @@ import java.util.List;
 
 import co.dift.ui.SwipeToAction;
 import entities.ItemEntity;
-import model.Item;
 
 public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerViewAdapter.ItemViewHolder> {
     private List<ItemEntity> itemList;

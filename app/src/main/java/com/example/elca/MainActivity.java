@@ -14,16 +14,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import adapter.ItemRecyclerViewAdapter;
@@ -31,7 +28,6 @@ import co.dift.ui.SwipeToAction;
 import dao.IItemDAO;
 import entities.ItemEntity;
 import model.AppDatabase;
-import model.Item;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
