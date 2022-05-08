@@ -50,15 +50,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initComponents();
+        toggleDarkTheme();
         registerEventHandlers();
         loadData();
     }
+
+    // Aktivite pause durumundan geri başlatılırsa veriyi yenile
     @Override
     protected void onResume() {
         super.onResume();
         reloadData();
     }
 
+    // Activity değişkenlerini layout ile eşleştir
     private void initComponents() {
         recyclerView = findViewById(R.id.recyclerView);
         floatingActionButton = findViewById(R.id.floatingActionButton);
@@ -67,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         sharedPreferences = getSharedPreferences("AppSettingPrefs", 0);
-
-        toggleDarkTheme();
 
         appDatabase = AppDatabase.getAppDatabase(MainActivity.this);
         itemDAO = appDatabase.getItemDAO();
@@ -83,18 +85,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadData() {
+        // tüm elektronik eşyaları recyclerview ile listeleme yapılıyor
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
         recyclerView.setHasFixedSize(true);
 
         List<ItemEntity> items = itemDAO.loadAllItems();
 
+        // eğer items boş dönerse noDataLayout'u göstermek için
         controlLayout(items.size() == 0);
 
         ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(items);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
+        // recyclerview listesine sağ kaydırma aksiyonu tanımla
         swipeToAction = new SwipeToAction(recyclerView, new SwipeToAction.SwipeListener<ItemEntity>() {
             @Override
             public boolean swipeLeft(ItemEntity itemData) {
@@ -119,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // eğer preferences de dark mode açıksa dark mode temayı aktifleştir
     private void toggleDarkTheme() {
        boolean isNightModeOn = sharedPreferences.getBoolean("NightMode", false);
        if (isNightModeOn) {
@@ -128,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
        }
     }
 
+    // tema değiştirme ikonunu ve başlığını dark mode'un aktifliğine göre değiştir
     private void changeToggleThemeIcon(MenuItem menuItem, boolean isNightModeOn) {
         if (isNightModeOn) {
             menuItem.setIcon(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_baseline_wb_sunny_24));
@@ -141,7 +148,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        changeToggleThemeIcon(menu.findItem(R.id.action_toggle_dark_theme), sharedPreferences.getBoolean("NightMode", false));
+        changeToggleThemeIcon(menu.findItem(R.id.action_toggle_dark_theme),
+                sharedPreferences.getBoolean("NightMode", false));
         return true;
     }
 
@@ -174,12 +182,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // swipetoaction ile silme işlemi
     private void deleteItem(ItemEntity item) {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MainActivity.this);
         alertBuilder.setTitle(getResources().getString(R.string.item_delete_alert_title));
         alertBuilder.setMessage(getResources().getString(R.string.item_delete_alert_message));
         alertBuilder.setIcon(R.drawable.ic_warn);
 
+        // eğer alertdialogtan evet gelirse sil
         alertBuilder.setPositiveButton(getResources().getString(R.string.item_delete_positive_button_title),
                 new DialogInterface.OnClickListener() {
             @Override
@@ -220,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    // hiç veri olmaması durumunda no data layout'u göster
     private void controlLayout(boolean setNoDataLayoutVisible) {
        if (setNoDataLayoutVisible) {
            noDataLayout.setVisibility(View.VISIBLE);
