@@ -35,6 +35,7 @@ public class AddItemActivity extends AppCompatActivity {
         registerEventHandlers();
     }
 
+    // Activity değişkenlerini layout ile eşleştir
     private void initComponents() {
         btnAdd = findViewById(R.id.btnAdd);
         txtTitleWrapper = findViewById(R.id.txtTitleWrapper);
@@ -61,6 +62,7 @@ public class AddItemActivity extends AppCompatActivity {
     private void controlTxtTitleValid() {
         EditText txtTitle = txtTitleWrapper.getEditText();
 
+        // eşya adının gerekli uzunlukta olmasını kontrol eder
         txtTitle.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -83,6 +85,7 @@ public class AddItemActivity extends AppCompatActivity {
             }
         });
     }
+    // günlük ortalama saatlik kullanımın 24 saatten fazla olmaması için kontrol
     private void controlAverageUsageValid() {
         EditText txtAverageUsage = txtAverageUsageWrapper.getEditText();
 
@@ -117,7 +120,9 @@ public class AddItemActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // eğer hata yoksa
                 if (!txtTitleWrapper.isErrorEnabled() && !txtAverageUsageWrapper.isErrorEnabled()) {
+                    // eğer alanlar boş değilse
                    if (txtTitleWrapper.getEditText().getText().length() > 0 &&
                            txtAverageUsageWrapper.getEditText().getText().length() > 0 &&
                            txtMaxWattWrapper.getEditText().getText().length() > 0
