@@ -4,10 +4,10 @@ import entities.ItemEntity;
 
 public class ItemUsage {
     private ItemEntity item;
-    private double kiloWattUsage;  // 1000 / watt
+    private double kiloWattUsage;  // watt / 1000
     private double dailyUsage; // kilowatt * averageUsage
     private double weeklyUsage;  // dailyUsage * 7
-    private double monthlyUsage;  // dailyUsage * 7
+    private double monthlyUsage;  // dailyUsage * 30
 
     public ItemUsage(ItemEntity item) {
         this.item = item;
