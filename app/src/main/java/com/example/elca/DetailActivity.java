@@ -111,6 +111,9 @@ public class DetailActivity extends AppCompatActivity {
        PieDataSet dataSet = new PieDataSet(entries,
                getResources().getString(R.string.detail_chart_legend_title));
        dataSet.setColors(colors);
+       // if we want to set labels outside
+       // dataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+       // dataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
 
        PieData data = new PieData(dataSet);
        data.setDrawValues(true);
