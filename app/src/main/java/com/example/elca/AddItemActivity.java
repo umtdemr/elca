@@ -128,10 +128,13 @@ public class AddItemActivity extends AppCompatActivity {
                            txtMaxWattWrapper.getEditText().getText().length() > 0
                    ) {
                        addItem();
+
+                       // clear fields
                        txtTitleWrapper.getEditText().setText("");
                        txtMaxWattWrapper.getEditText().setText("");
                        txtAverageUsageWrapper.getEditText().setText("");
 
+                       // focus title back
                        txtTitleWrapper.getEditText().requestFocus();
                    } else {
                        Toast.makeText(AddItemActivity.this,
