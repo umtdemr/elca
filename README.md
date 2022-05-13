@@ -26,6 +26,6 @@ In generally, Material design elements used wherever possible. For example: Snac
 Elca supports dark and light theme. With icon in toolbar, we can switch between themes. Users choices is remembering with SharedPreferences logic.
 
 <div>
-  <img src="assets/dark-ligh-theme.png" width="390" />
+  <img src="assets/dark-light-theme.png" width="390" />
 </div>
 
