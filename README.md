@@ -7,7 +7,10 @@ Elca is an android app written with java that calculates monthly costs and power
 ## Screenshots
 
 <div>
-  <img src="assets/dark-light-theme.png" width="260"/>
+  <img src="assets/dark-light-theme.png" width="390"/>
+  <img src="assets/main-activity-with-data.png" width="390"/>
+  <img src="assets/add-item-activity.png" width="390"/>
+  <img src="assets/detail-activity.png" width="390"/>
 </div>
 
 ## Design Principles
