@@ -34,7 +34,9 @@ Elca supports dark and light theme. With icon in toolbar, we can switch between 
 
 There is no package used for Splash Screen because the packages for Splash Screen downgrades min sdk version in the application. I've created an Activity, layout and theme for Splash Screen as mentioned in [Atul Sharma's article](https://medium.com/geekculture/implementing-the-perfect-splash-screen-in-android-295de045a8dc)
 
-
-<div>
-  <img src="assets/splash-screen.png" width="390" />
-</div>
+<details>
+  <summary>See Splash Screen</summary>
+  <div>
+    <img src="assets/splash-screen.png" width="390" />
+  </div>
+</detail>
