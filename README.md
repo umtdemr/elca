@@ -39,7 +39,7 @@ There is no package used for Splash Screen because the packages for Splash Scree
   <div>
     <img src="assets/splash-screen.png" width="390" />
   </div>
-</detail>
+</details>
 
 
 ### Usage Data Visualization Pie Char
