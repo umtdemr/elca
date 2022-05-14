@@ -42,8 +42,14 @@ There is no package used for Splash Screen because the packages for Splash Scree
 </details>
 
 
-### Usage Data Visualization Pie Char
+### Usage Data Visualization with Pie Chart
 
 For visualization of monthly power usage, I've used [MPAndroidChart.](https://github.com/PhilJay/MPAndroidChart/)
+
+
+## Lesson Learned
+
+* Developing native android with java can be very annoying. For example, creating a custom list view with RecyclerView is requires multiple java class, layouts and much more. But there is a benefit in there: the clean code.
+
 
 
