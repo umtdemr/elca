@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 reloadData();
 
                 Snackbar snackbar = Snackbar.make(recyclerView,
-                        item.getTitle() + " silindi", Snackbar.LENGTH_LONG);
+                        item.getTitle() + " deleted", Snackbar.LENGTH_LONG);
                 snackbar.setAction(getResources().getString(R.string.snackbar_action_back),
                         new View.OnClickListener() {
                     @Override

@@ -44,7 +44,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         ItemEntity item = itemList.get(position);
         holder.lblTitle.setText(item.getTitle());
         holder.lblMaxWatt.setText(String.valueOf(item.getMaxWatt()) + " watt");
-        holder.lblAverageUsage.setText(String.valueOf(item.getAverageUsage()) + " saat");
+        holder.lblAverageUsage.setText(String.valueOf(item.getAverageUsage()) + " hours");
         holder.data = item;
     }
 
